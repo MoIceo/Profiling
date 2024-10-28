@@ -15,3 +15,16 @@ namespace ReyRom
         }
     }
 }
+
+namespace MoIce
+{
+    public static class Recursion
+    {
+        public static int Factorial(int n)
+        {
+            if (n < 0) return -1;
+            if (n == 0) return 1;
+            return n * Factorial(n - 1);
+        }
+    }
+}

@@ -4,21 +4,28 @@ class Program
 {
     static void Main()
     {
-        int[] data = GenerateRandomArray(10000);
+        int[] data = GenerateRandomArray(1000000);
 
-        // Bubble Sort
-        int[] bubbleSortData = (int[])data.Clone();
-        Stopwatch stopwatch = Stopwatch.StartNew();
-        ReyRom.Sorting.BubbleSort(bubbleSortData);
-        stopwatch.Stop();
-        Console.WriteLine($"Bubble Sort Time: {stopwatch.ElapsedMilliseconds} ms");
+        //// Bubble Sort
+        //int[] bubbleSortData = (int[])data.Clone();
+        //Stopwatch stopwatch = Stopwatch.StartNew();
+        //ReyRom.Sorting.BubbleSort(bubbleSortData);
+        //stopwatch.Stop();
+        //Console.WriteLine($"Bubble Sort Time: {stopwatch.ElapsedMilliseconds} ms");
 
         // Quick Sort
         int[] quickSortData = (int[])data.Clone();
-        stopwatch.Restart();
+        Stopwatch stopwatch = Stopwatch.StartNew();
         ReyRom.Sorting.QuickSort(quickSortData, 0, quickSortData.Length - 1);
         stopwatch.Stop();
         Console.WriteLine($"Quick Sort Time: {stopwatch.ElapsedMilliseconds} ms");
+
+        // Insertion Sort
+        int[] insertionSortData = (int[])data.Clone();
+        stopwatch.Restart();
+        MoIce.Sorting.InsertionSort(insertionSortData);
+        stopwatch.Stop();
+        Console.WriteLine($"Insertion Sort Time: {stopwatch.ElapsedMilliseconds} ms");
     }
 
     static int[] GenerateRandomArray(int size)

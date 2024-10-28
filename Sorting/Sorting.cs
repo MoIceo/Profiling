@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -42,6 +43,27 @@ namespace ReyRom
             }
             if (left < j) QuickSort(data, left, j);
             if (i < right) QuickSort(data, i, right);
+        }
+    }
+}
+
+namespace MoIce
+{
+    public static class Sorting
+    {
+        public static void InsertionSort(int[] data)
+        {
+            for (int i = 1; i < data.Length; i++)
+            {
+                int x = data[i];
+                int j = i;
+                while (j > 0 && data[j - 1] > x)
+                {
+                    data[j] = data[j - 1];
+                    j--;
+                }
+                data[j] = x;
+            }
         }
     }
 }
